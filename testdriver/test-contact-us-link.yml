@@ -1,0 +1,30 @@
+version: 4.0.69
+steps:
+  - prompt: Click on "Contact Sales" link in the header.
+    commands:
+      - command: hover-text
+        text: Contact Sales
+        description: link in the header
+        action: click
+  - prompt: Assert that you navigate to the contact page.
+    commands:
+      - command: assert
+        expect: Contact our experts!
+  - prompt: >-
+      Verify that contact form fields are present.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: First Name *
+      - command: assert
+        expect: Last Name *
+      - command: assert
+        expect: Email Address *
+      - command: assert
+        expect: Company Name *
+      - command: assert
+        expect: Use Case *
+      - command: assert
+        expect: Country *
+      - command: assert
+        expect: Message *
