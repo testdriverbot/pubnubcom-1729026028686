@@ -1,0 +1,22 @@
+version: 4.0.69
+steps:
+  - prompt: Click on the "Pricing" link in the header.
+    commands:
+      - command: hover-text
+        text: Pricing
+        description: link in the header
+        action: click
+  - prompt: Assert that the pricing page is displayed.
+    commands:
+      - command: assert
+        expect: >-
+          the pricing page is displayed with "Pricing and Support" as the
+          heading
+  - prompt: >-
+      Verify presence of pricing plans and details.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: >-
+          the pricing plans and details are visible with "Platform Free",
+          "Platform Pro", and "Platform Starter" options
