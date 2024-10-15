@@ -1,0 +1,46 @@
+version: 4.0.69
+steps:
+  - prompt: >-
+      Click on each main header link sequentially: Products, Solutions, Pricing,
+      Developers, Resources.
+    commands:
+      - command: hover-text
+        text: Products
+        description: main header link
+        action: click
+      - command: wait
+        timeout: 2000
+      - command: hover-text
+        text: Solutions
+        description: main header link
+        action: click
+      - command: wait
+        timeout: 2000
+      - command: hover-text
+        text: Pricing
+        description: main header link
+        action: click
+      - command: wait
+        timeout: 2000
+      - command: hover-text
+        text: Developers
+        description: main header link
+        action: click
+      - command: wait
+        timeout: 2000
+      - command: hover-text
+        text: Resources
+        description: main header link
+        action: click
+  - prompt: >-
+      Assert that each link navigates to the correct section or page.  # Use the
+      content of the file from the environment
+    commands:
+      - command: hover-text
+        text: Products
+        description: main header link
+        action: click
+      - command: wait
+        timeout: 2000
+      - command: assert
+        expect: the page contains "Product Overview"
