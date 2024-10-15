@@ -1,0 +1,21 @@
+version: 4.0.69
+steps:
+  - prompt: Click on the search icon in the navigation bar.
+    commands:
+      - command: hover-image
+        description: search icon in the navigation bar
+        action: click
+  - prompt: Enter a test keyword.
+    commands:
+      - command: hover-text
+        text: Search or ask anything
+        description: search input field
+        action: click
+      - command: type
+        text: test keyword
+  - prompt: >-
+      Assert that search results are displayed relevant to the keyword.  # Use
+      the content of the file from the environment
+    commands:
+      - command: assert
+        expect: search results are displayed relevant to the keyword "test keyword"
