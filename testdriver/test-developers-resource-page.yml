@@ -1,0 +1,20 @@
+version: 4.0.69
+steps:
+  - prompt: Click on "Developers" link in the header.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Developers
+        description: link in the header
+        action: click
+  - prompt: Assert that the developer resources page loads.
+    commands:
+      - command: assert
+        expect: the page title is "PubNub for Developers"
+  - prompt: >-
+      Verify the presence of developer tools and documentation links.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: the page contains "Documentation" and "Live Code Tour" links
