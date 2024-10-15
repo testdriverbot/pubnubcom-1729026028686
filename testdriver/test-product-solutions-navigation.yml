@@ -1,0 +1,18 @@
+version: 4.0.69
+steps:
+  - prompt: Click on the "Solutions" link in the header.
+    commands:
+      - command: hover-text
+        text: Solutions
+        description: link in the header
+        action: click
+  - prompt: Assert that the solutions page is displayed.
+    commands:
+      - command: assert
+        expect: the Solutions dropdown is visible
+  - prompt: >-
+      Verify sections of industry-specific solutions are present.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: the BY INDUSTRY section is visible
